@@ -1,86 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Website</title>
+    <!-- adding css here  -->
     <style>
-        nav {
-            background-color: #333;
-            overflow: hidden;
+        @font-face {
+            font-family: link-font;
+            src: url(OpenSans-Light.ttf);
         }
         
-        nav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
+        @font-face {
+            font-family: heading-font;
+            src: url(Philosopher-Bold.ttf);
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        input {
+            border: none;
+            outline: none;
+            background: none;
+        }
+        
+        a {
             text-decoration: none;
-        }
-        
-        nav a:hover {
-            background-color: #ddd;
             color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        nav .navbar-left {
-            float: left;
+        ul,
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        nav .navbar-right {
-            float: right;
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
         }
         
-        @media screen and (max-width: 600px) {
-            nav a:not(:first-child) {
-                display: none;
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .link-font {
+            font-family: link-font, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: heading-font, sans-serif;
+        }
+        /* navbar */
+        
+        .navbar {
+            justify-content: space-around;
+            height: 56px;
+            border-bottom: 1px solid black;
+        }
+        
+        .nav-left .name {
+            font-size: 24px;
+            height: 30px;
+        }
+        
+        .nav-right a li {
+            font-size: 20px;
+            margin-right: 13px;
+        }
+        /* about section  */
+        
+        .about-section {
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-top: 3vw;
+        }
+        
+        .about-left {
+            padding-left: 8vw;
+        }
+        
+        .portfolio-img {
+            width: 35vw;
+            height: calc((35vw * 4) / 3.6);
+            background-image: url(student.avif);
+            background-size: cover;
+            background-position-x: -20vw;
+            border-bottom: 7px solid white;
+            border-right: 7px solid black;
+            border-radius: 7px;
+            -webkit-box-shadow: -23px 20px 7px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -23px 20px 7px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: -23px 20px 7px 0px rgba(0, 0, 0, 0.75);
+        }
+        /* about-right  */
+        
+        .about-right {
+            width: 40vw;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: flex-start;
+            padding-top: 6vw;
+        }
+        
+        .about-right .intro-line-first {
+            font-size: 7vw;
+        }
+        
+        .about-right .intro-line-second {
+            font-size: 3vw;
+            margin-left: 2px;
+            line-height: 3vw;
+        }
+        
+        .about-right .intro-line-second span {
+            color: rgb(13, 190, 221);
+        }
+        
+        .about-right p {
+            font-size: 2vw;
+            margin-left: 2px;
+            line-height: 4vw;
+        }
+        
+        .about-right .hey-img {
+            background-image: url(heyimg2.jpg);
+            width: 6vw;
+            height: 6vw;
+            background-size: cover;
+            margin-left: 10px;
+        }
+        
+        @media (max-width:470px) {
+            .nav-right a li {
+                font-size: 15px;
+                margin-right: 5px;
             }
-            nav a.icon {
-                float: right;
-                display: block;
-            }
-        }
-        
-        @media screen and (max-width: 600px) {
-            nav.responsive .navbar-left,
-            .navbar-right {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
+            .nav-left .name {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- No-(1)  #headers  -->
 
-    <nav>
-        <div class="navbar-left">
-            <a href="#">Ravi Sinhmar</a>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+    <nav class="navbar flex-row">
+        <div class="nav-childs nav-left">
+            <a href="" class="name heading-font">Ravi Sinhmar</a>
+        </div>
+        <div class="flex-row nav-childs nav-right">
+            <ul class="nav-right-ul flex-row link-font">
+                <a href="" class="home">
+                    <li>Home</li>
+                </a>
+                <a href="" class="home">
+                    <li>About</li>
+                </a>
+                <a href="" class="home">
+                    <li>Projects</li>
+                </a>
+                <a href="" class="home">
+                    <li>Contact</li>
+                </a>
+            </ul>
+
         </div>
 
-        <div class="navbar-right">
-            <a href="#" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
+
     </nav>
 
-    <script>
-        function myFunction() {
-            var x = document.querySelector("nav");
+    <section class="about-section flex-row">
+        <div class="about-left flex-column">
+            <div class="portfolio-img">
+            </div>
 
-            if (x.className === "") {
-                x.className += "responsive";
-            } else {
-                x.className = "";
-            }
-        }
-    </script>
+        </div>
+
+        <div class="about-right flex-column">
+            <div class="intro flex-row">
+                <h1 class="intro-line-first heading-font">Hey folks</h1>
+                <div class="hey-img">
+                </div>
+            </div>
+            <h3 class="intro-line-second heading-font">
+                here is <span class="name-span">Ravi Sinhmar</span>
+            </h3>
+            <p class="link-font">a web developer</p>
+        </div>
+
+
+    </section>
+
+
+    <!-- No-(2)  #section Name  -->
 
 </body>
 
